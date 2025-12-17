@@ -177,7 +177,7 @@ export default function App() {
         <header className="top-bar">
           <div className="brand">
             <span className="dot" />
-            <span>Dominic</span>
+            <span></span>
           </div>
           <button className="menu-btn" aria-label="Open menu">
             <span className="menu-lines">
