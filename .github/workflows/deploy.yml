@@ -13,33 +13,47 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: npm
 
-      - name: Install dependencies
+      - name: Install deps
         run: npm ci
 
-      - name: Build app
+      - name: Build
         run: npm run build
 
-      # DEBUG (puoi rimuoverlo dopo il primo run)
-      - name: Inspect build output
+      - name: Debug build output
         run: |
-          echo "Root:"
+          echo "== ROOT =="
           ls -la
-          echo "dist:"
-          ls -la dist
+          echo "== BUILD =="
+          ls -la build || true
+          echo "== DIST =="
+          ls -la dist || true
+          echo "== OUT =="
+          ls -la out || true
+
+      - name: Validate build (must contain index.html)
+        run: |
+          if [ -f dist/index.html ]; then
+            echo "Using dist/"
+          elif [ -f build/index.html ]; then
+            echo "Using build/"
+          else
+            echo "❌ No index.html found"
+            exit 1
+          fi
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           personal_token: ${{ secrets.DEPLOY_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: ./dist
+          publish_dir: ${{ steps.validate.outputs.dir || 'dist' }}
           force_orphan: true
