@@ -1,4 +1,3 @@
-import React from 'react';
 
 const stats = [
   { value: '7', label: 'Public Repos' },
@@ -70,18 +69,6 @@ const portraitFallback =
       <circle cx="200" cy="150" r="90" fill="#c2c2bd"/>
       <rect x="95" y="250" width="210" height="200" rx="100" fill="#b5b5af"/>
       <text x="200" y="490" text-anchor="middle" fill="#8a8a84" font-family="Arial" font-size="20">Portrait</text>
-    </svg>`
-  );
-
-const portfolioUrl =
-  'https://images.unsplash.com/photo-1519241047957-be31d7379a5d?auto=format&fit=crop&w=1400&q=80';
-const portfolioFallback =
-  'data:image/svg+xml;utf8,' +
-  encodeURIComponent(
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" fill="none">
-      <rect width="1200" height="700" rx="24" fill="#d7d7d2"/>
-      <rect x="80" y="120" width="1040" height="460" rx="22" fill="#c2c2bd"/>
-      <text x="600" y="370" text-anchor="middle" fill="#8a8a84" font-family="Arial" font-size="36">Portfolio Image</text>
     </svg>`
   );
 
