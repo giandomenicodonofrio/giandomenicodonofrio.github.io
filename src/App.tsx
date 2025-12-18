@@ -200,13 +200,6 @@ export default function App() {
             <span className="dot" />
             <span></span>
           </div>
-          <button className="menu-btn" aria-label="Apri menu">
-            <span className="menu-lines">
-              <span />
-              <span />
-              <span />
-            </span>
-          </button>
         </header>
 
         <section className="hero">
