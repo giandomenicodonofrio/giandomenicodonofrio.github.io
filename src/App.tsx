@@ -1,27 +1,26 @@
-
 const stats = [
-  { value: '7', label: 'Public Repos' },
-  { value: '2', label: 'Followers' },
-  { value: '2018', label: 'Dev since' },
-  { value: 'Rome, IT', label: 'Based in' }
+  { value: '7', label: 'Repo pubblici' },
+  { value: '2', label: 'Follower' },
+  { value: '2018', label: 'Sviluppo dal' },
+  { value: 'Roma, IT', label: 'Basato a' }
 ];
 
 const services = [
   {
-    title: 'User-Centered Design',
-    copy: 'Intuitive and engaging experiences tailored for your audience.'
+    title: "Design centrato sull'utente",
+    copy: 'Esperienze intuitive e coinvolgenti, cucite sul tuo pubblico.'
   },
   {
-    title: 'Brand Identity & Strategy',
-    copy: 'Strong visual storytelling that makes your brand unforgettable.'
+    title: 'Identita di brand e strategia',
+    copy: 'Storytelling visivo forte per rendere il tuo brand memorabile.'
   },
   {
-    title: 'Responsive & Modern UI',
-    copy: 'Pixel-perfect designs optimized for all devices.'
+    title: 'UI moderna e responsive',
+    copy: 'Interfacce pixel-perfect ottimizzate per ogni dispositivo.'
   },
   {
-    title: 'Seamless Prototyping',
-    copy: 'Innovative mockups to bring ideas to life before development.'
+    title: 'Prototipi rapidi e realistici',
+    copy: 'Mockup e prototipi per validare idee prima dello sviluppo.'
   }
 ];
 
@@ -30,31 +29,31 @@ const logos = ['GitHub', 'React', 'TypeScript', 'Python', 'Tailwind', 'Next.js',
 const githubProjects = [
   {
     title: 'Asclepius',
-    desc: 'Machine learning pipeline and data analysis notebooks for healthcare scenarios.',
+    desc: 'Pipeline di machine learning e notebook di analisi dati per scenari healthcare.',
     tech: ['Python', 'Jupyter'],
     link: 'https://github.com/giandomenicodonofrio/asclepius'
   },
   {
     title: 'CodeGPT',
-    desc: 'ChatGPT enhanced with custom code for developer assistance and automation.',
+    desc: 'ChatGPT potenziato con codice custom per assistenza e automazione dev.',
     tech: ['Python', 'AI'],
     link: 'https://github.com/giandomenicodonofrio/CodeGPT'
   },
   {
     title: 'ChatGPT Excel Filler',
-    desc: 'CLI tool to populate Excel files via ChatGPT prompts and structured outputs.',
+    desc: 'CLI per popolare file Excel tramite prompt e output strutturati di ChatGPT.',
     tech: ['Python', 'Automation'],
     link: 'https://github.com/giandomenicodonofrio/ChatGPTExcelFiller'
   },
   {
     title: 'Custom React Video Player',
-    desc: 'A customizable React video player with advanced controls and modern UI.',
+    desc: 'Player video React personalizzabile con controlli avanzati e UI moderna.',
     tech: ['React', 'JavaScript'],
     link: 'https://github.com/giandomenicodonofrio/custom-react-video-player'
   },
   {
     title: 'API Axios Singleton',
-    desc: 'Pattern for centralized Axios configuration and request handling.',
+    desc: 'Pattern per configurare Axios in modo centralizzato e gestire le richieste.',
     tech: ['JavaScript', 'API'],
     link: 'https://github.com/giandomenicodonofrio/api_axios_singleton'
   }
@@ -68,7 +67,7 @@ const portraitFallback =
       <rect width="400" height="520" rx="200" fill="#d7d7d2"/>
       <circle cx="200" cy="150" r="90" fill="#c2c2bd"/>
       <rect x="95" y="250" width="210" height="200" rx="100" fill="#b5b5af"/>
-      <text x="200" y="490" text-anchor="middle" fill="#8a8a84" font-family="Arial" font-size="20">Portrait</text>
+      <text x="200" y="490" text-anchor="middle" fill="#8a8a84" font-family="Arial" font-size="20">Ritratto</text>
     </svg>`
   );
 
@@ -171,6 +170,28 @@ export default function App() {
           .hero h2 { font-size: 34px; }
           .stats { right: 0; left: 0; }
         }
+
+        @media (max-width: 760px) {
+          .card { width: 100%; }
+          .hero { padding: 14px 18px 24px; gap: 16px; }
+          .hero-visual { flex-direction: column; align-items: center; }
+          .photo-wrap { max-width: 300px; margin: 0 auto; }
+          .stats { width: 100%; position: static; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-top: 12px; }
+          .cta { width: 100%; justify-content: center; text-align: center; }
+        }
+
+        @media (max-width: 540px) {
+          .card { width: 100%; }
+          .top-bar { padding: 16px 18px; }
+          .hero { padding: 10px 16px 20px; gap: 14px; }
+          .hero h1 { font-size: 34px; line-height: 1.05; }
+          .hero h2 { font-size: 26px; }
+          .hero p { font-size: 15px; line-height: 1.55; }
+          .eyebrow { font-size: 11px; margin-bottom: 12px; }
+          .hero-visual { justify-content: center; }
+          .photo-wrap { max-width: 260px; margin: 0 auto; }
+          .stats { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-top: 10px; }
+        }
       `}</style>
 
       <div className="card">
@@ -179,7 +200,7 @@ export default function App() {
             <span className="dot" />
             <span></span>
           </div>
-          <button className="menu-btn" aria-label="Open menu">
+          <button className="menu-btn" aria-label="Apri menu">
             <span className="menu-lines">
               <span />
               <span />
@@ -190,17 +211,17 @@ export default function App() {
 
         <section className="hero">
           <div className="hero-text">
-            <div className="eyebrow"><span className="line" /> Hey, I am Giandomenico</div>
+            <div className="eyebrow"><span className="line" /> Ciao, sono Giandomenico</div>
             <h1>Full-Stack</h1>
             <h2>
-              Developer <span className="amp">& Designer</span>
+              Developer <span className="amp">e Designer</span>
             </h2>
             <p>
-              Full-Stack Developer from Rome crafting performant products, thoughtful UX, and reliable front-to-back solutions.
+              Full-Stack Developer da Roma: realizzo prodotti performanti, UX curate e soluzioni affidabili end-to-end.
             </p>
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
               <a className="cta" href="https://github.com/giandomenicodonofrio" target="_blank" rel="noreferrer">
-                View GitHub →
+                Vai al GitHub
               </a>
               <a className="cta" href="https://www.linkedin.com/in/giandomenicodonofrio/" target="_blank" rel="noreferrer" style={{ background: '#f0f0eb', color: '#111' }}>
                 LinkedIn
@@ -214,7 +235,7 @@ export default function App() {
               <div className="photo">
                 <img
                   src={portraitUrl}
-                  alt="Portrait of Dominic"
+                  alt="Ritratto di Giandomenico"
                   onError={(e) => {
                     e.currentTarget.onerror = null;
                     e.currentTarget.src = portraitFallback;
@@ -243,12 +264,12 @@ export default function App() {
         </section>
 
         <section className="trusted">
-          <h4>Toolkit & ecosystem</h4>
+          <h4>Toolkit e ecosistema</h4>
           <p>Lavoro con tecnologie moderne per shipping rapido e manutenzione semplice.</p>
           <div className="logo-grid">
             {logos.map((logo, index) => (
               <div className="logo-pill" key={`${logo}-${index}`}>
-                <span className="mark">★</span>
+                <span className="mark">*</span>
                 <span>{logo}</span>
               </div>
             ))}
@@ -257,30 +278,29 @@ export default function App() {
 
         <section className="about">
           <div>
-            <h2>Crafting meaningful brands & intuitive experiences</h2>
+            <h2>Creo brand significativi ed esperienze intuitive</h2>
           </div>
           <div>
             <p>
-              Hey, I am Giandomenico, a full-stack developer passionate about creating visually compelling and
-              user-friendly digital experiences.
+              Ciao, sono Giandomenico, full-stack developer appassionato di creare esperienze digitali curate e facili da usare.
             </p>
             <p>
-              Con un forte focus su UX e affidabilità, progetto e sviluppo applicazioni end-to-end: dal design system
-              e component library, a API performanti e integrazioni cloud. Unisco strategia, creatività e codice per
+              Con un forte focus su UX e affidabilita, progetto e sviluppo applicazioni end-to-end: dal design system
+              e component library, a API performanti e integrazioni cloud. Unisco strategia, creativita e codice per
               trasformare idee in prodotti pronti all'uso.
             </p>
           </div>
         </section>
 
         <section className="portfolio">
-          <h3>GitHub Projects</h3>
+          <h3>Progetti GitHub</h3>
           <p>Una selezione di repository dal mio profilo GitHub.</p>
           <div className="logo-grid" style={{ gap: '16px' }}>
             {githubProjects.map((project) => (
               <a className="logo-pill" key={project.title} href={project.link} target="_blank" rel="noreferrer" style={{ alignItems: 'flex-start', flexDirection: 'column', gap: '8px' }}>
                 <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'center', gap: '8px' }}>
                   <span style={{ fontWeight: 700 }}>{project.title}</span>
-                  <span className="mark">↗</span>
+                  <span className="mark"></span>
                 </div>
                 <span style={{ color: '#4e4e4a', fontSize: '13px', lineHeight: 1.5 }}>{project.desc}</span>
                 <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
@@ -301,16 +321,16 @@ export default function App() {
             <p className="contact-description">Raccontami la tua idea: una call veloce e capiamo come costruirla insieme.</p>
             <div className="contact-buttons">
               <a href="mailto:giandomenico1998@gmail.com" className="primary-button">
-                📧 Scrivimi ora
+                Scrivimi ora
               </a>
               <a href="https://linkedin.com/in/giandomenicodonofrio" target="_blank" rel="noreferrer" className="secondary-button">
-                💼 LinkedIn
+                LinkedIn
               </a>
             </div>
             <div className="social-links">
-              <a href="https://github.com/giandomenicodonofrio" target="_blank" rel="noreferrer" className="social-link">🐙</a>
-              <a href="#" className="social-link">🐦</a>
-              <a href="#" className="social-link">📷</a>
+              <a href="https://github.com/giandomenicodonofrio" target="_blank" rel="noreferrer" className="social-link">GitHub</a>
+              <a href="#" className="social-link">Twitter</a>
+              <a href="#" className="social-link">Instagram</a>
             </div>
           </div>
         </section>
