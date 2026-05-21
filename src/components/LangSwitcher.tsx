@@ -4,7 +4,7 @@ const LangSwitcher = () => {
   const { lang, setLang } = useI18n();
   const toggle = () => setLang(lang === "en" ? "it" : "en");
 
-  const btn = "px-3 py-1 text-xs font-mono border border-massa-grid bg-massa-black text-massa-white hover:bg-massa-white hover:text-massa-black transition-colors";
+  const btn = "px-3 py-1 text-xs font-mono border border-massa-black/20 bg-massa-surface text-massa-black shadow-sm hover:border-massa-red hover:text-massa-red transition-colors";
 
   return (
     <div className="fixed top-4 right-4 z-50 flex gap-2" aria-label="Language switcher">

@@ -12,21 +12,21 @@ const PortfolioFooter = () => {
   const { t } = useI18n();
 
   return (
-    <footer className="w-full bg-massa-black text-massa-white px-6 py-10 md:px-10 md:py-12">
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-10 border-t border-white/10 pt-8 md:grid-cols-[1.2fr_0.9fr_0.9fr]">
+    <footer className="w-full bg-massa-paper text-massa-black px-6 py-10 md:px-10 md:py-12">
+      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-10 border-t border-massa-black/15 pt-8 md:grid-cols-[1.2fr_0.9fr_0.9fr]">
         <div className="space-y-4">
           <div className="max-w-full break-words font-display text-[9vw] leading-[0.88] uppercase sm:text-[8vw] md:text-[3.2vw]">
             Giandomenico
             <br />
             D&apos;Onofrio
           </div>
-          <p className="max-w-md font-mono text-sm leading-[1.7] text-white/72">
+          <p className="max-w-md font-mono text-sm leading-[1.7] text-massa-black/70">
             {t("footer.summary")}
           </p>
         </div>
 
         <div className="space-y-4">
-          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/45">
+          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-massa-black/45">
             {t("footer.contact")}
           </div>
           <div className="flex flex-col gap-3 font-mono text-sm">
@@ -43,7 +43,7 @@ const PortfolioFooter = () => {
         </div>
 
         <div className="space-y-4">
-          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/45">
+          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-massa-black/45">
             {t("footer.navigate")}
           </div>
           <div className="flex flex-col gap-3 font-mono text-sm">
@@ -56,7 +56,7 @@ const PortfolioFooter = () => {
         </div>
       </div>
 
-      <div className="mx-auto mt-8 flex w-full max-w-6xl flex-col gap-2 border-t border-white/10 pt-5 font-mono text-xs text-white/45 md:flex-row md:items-center md:justify-between">
+      <div className="mx-auto mt-8 flex w-full max-w-6xl flex-col gap-2 border-t border-massa-black/15 pt-5 font-mono text-xs text-massa-black/45 md:flex-row md:items-center md:justify-between">
         <span>{t("scene15.footer")}</span>
         <span>{t("footer.location")}</span>
       </div>

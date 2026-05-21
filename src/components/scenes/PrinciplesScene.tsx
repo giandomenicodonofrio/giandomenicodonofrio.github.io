@@ -10,8 +10,8 @@ const PrinciplesScene = () => {
   const { ref, y } = useParallax(0.2);
 
   return (
-    <section ref={ref} className="relative w-full min-h-screen bg-massa-red overflow-hidden flex items-center justify-center">
-      <motion.div className="absolute inset-0 bg-massa-red" style={{ y }} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={vp} transition={{ duration: 0.4, ease: EASE_POWER2 }} />
+    <section ref={ref} className="relative w-full min-h-screen bg-massa-paper overflow-hidden flex items-center justify-center">
+      <motion.div className="absolute inset-0 bg-massa-paper" style={{ y }} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={vp} transition={{ duration: 0.4, ease: EASE_POWER2 }} />
 
       <div className="clip-reveal z-10 text-center px-6">
         <motion.h2 className="font-display text-massa-black text-[10vw] md:text-[7vw] leading-[0.85] uppercase" initial={{ y: 50, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={vp} transition={{ duration: 0.65, ease: EASE_POWER3, delay: 0.16 }}>

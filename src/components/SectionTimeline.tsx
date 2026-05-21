@@ -46,7 +46,7 @@ const SectionTimeline = () => {
 
   return (
     <div className="fixed left-4 top-1/4 z-[60] hidden md:flex flex-col items-start gap-3">
-      <div className="h-full w-px bg-white/20 translate-x-2" aria-hidden />
+      <div className="h-full w-px bg-massa-black/15 translate-x-2" aria-hidden />
       {sections.map((s) => {
         const isActive = s.id === active;
         return (
@@ -60,10 +60,10 @@ const SectionTimeline = () => {
           >
             <span
               className={`h-3 w-3 rounded-full border transition-all duration-200 ${
-                isActive ? "border-white bg-white" : "border-white/60 bg-transparent"
+                isActive ? "border-massa-red bg-massa-red" : "border-massa-black/45 bg-transparent"
               }`}
             />
-            <span className="text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">{t(s.key)}</span>
+            <span className="text-massa-black">{t(s.key)}</span>
           </button>
         );
       })}

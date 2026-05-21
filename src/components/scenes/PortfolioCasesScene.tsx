@@ -12,7 +12,7 @@ const PortfolioCasesScene = () => {
   const cards = portfolioCaseIds.map((id) => projectCatalog[id]);
 
   return (
-    <section ref={ref} className="relative w-full bg-massa-red overflow-visible py-16 md:py-24">
+    <section ref={ref} className="relative w-full bg-massa-paper overflow-visible py-16 md:py-24">
       <motion.div className="absolute inset-0 grid-texture" style={{ y }} initial={{ opacity: 0 }} whileInView={{ opacity: 0.12 }} viewport={vp} transition={{ duration: 0.35, ease: EASE_POWER2 }} />
 
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-12 gap-6 md:gap-8 w-full max-w-6xl mx-auto px-4 md:px-6">
@@ -24,7 +24,7 @@ const PortfolioCasesScene = () => {
           return (
             <motion.div
               key={project.id}
-              className={`bg-massa-black w-full ${isPrimary ? "md:col-span-2 xl:col-span-7" : "md:col-span-1 xl:col-span-5"} flex flex-col overflow-hidden rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.35)] transition-transform duration-200 hover:-translate-y-1 hover:border hover:border-massa-red/60 cursor-pointer`}
+              className={`bg-massa-surface border border-massa-black/10 w-full ${isPrimary ? "md:col-span-2 xl:col-span-7" : "md:col-span-1 xl:col-span-5"} flex flex-col overflow-hidden rounded-2xl shadow-[0_20px_50px_rgba(20,20,20,0.12)] transition-transform duration-200 hover:-translate-y-1 hover:border-massa-red/60 cursor-pointer`}
               initial={isPrimary ? { opacity: 0, y: 30, scale: 0.97 } : { opacity: 0, x: 24, scale: 0.98 }}
               whileInView={{ opacity: 1, y: 0, x: 0, scale: 1 }}
               viewport={vp}
@@ -35,25 +35,25 @@ const PortfolioCasesScene = () => {
               </div>
               <div className={`${isPrimary ? "p-12 md:p-14 gap-5" : "p-10 md:p-11 gap-4"} flex flex-col justify-between flex-1`}>
                 <div className="space-y-4">
-                  <h3 className={`font-display text-massa-white ${isPrimary ? "text-[6vw] md:text-[2.12vw]" : "text-[6vw] md:text-[2vw]"} leading-[0.9] uppercase tracking-tight`}>
+                  <h3 className={`font-display text-massa-black ${isPrimary ? "text-[6vw] md:text-[2.12vw]" : "text-[6vw] md:text-[2vw]"} leading-[0.9] uppercase tracking-tight`}>
                     {content.titleKeys.map((key) => t(key)).join("\n").split("\n").map((line) => (
                       <span key={line} className="block">{line}</span>
                     ))}
                   </h3>
-                  <p className={`font-mono text-massa-white text-base opacity-80 leading-[1.4] ${isPrimary ? "max-w-[380px]" : "max-w-[320px]"}`}>{t(content.whatKey!)}</p>
+                  <p className={`font-mono text-massa-black text-base opacity-75 leading-[1.4] ${isPrimary ? "max-w-[380px]" : "max-w-[320px]"}`}>{t(content.whatKey!)}</p>
                   <div className="space-y-1">
                     <span className="font-mono text-[11px] uppercase tracking-[0.12em] opacity-70">Role</span>
-                    <p className="font-mono text-sm text-massa-white opacity-80">{t(content.roleKey!)}</p>
+                    <p className="font-mono text-sm text-massa-black opacity-75">{t(content.roleKey!)}</p>
                   </div>
                   <div className="space-y-1">
                     <span className="font-mono text-[11px] uppercase tracking-[0.12em] opacity-70">Impact</span>
-                    <p className="font-mono text-sm text-massa-white opacity-70">{t(content.impactKey!)}</p>
+                    <p className="font-mono text-sm text-massa-black opacity-70">{t(content.impactKey!)}</p>
                   </div>
-                  <p className={`font-mono text-massa-white text-base opacity-75 leading-[1.4] ${isPrimary ? "max-w-[400px]" : "max-w-[320px]"}`}>{t(content.descKey!)}</p>
+                  <p className={`font-mono text-massa-black text-base opacity-70 leading-[1.4] ${isPrimary ? "max-w-[400px]" : "max-w-[320px]"}`}>{t(content.descKey!)}</p>
                 </div>
                 <div className={`flex items-center justify-between ${isPrimary ? "pt-2" : "pt-1"} text-sm`}>
-                  <span className="font-mono text-massa-white opacity-70">{t(content.tagsKey!)}</span>
-                  <a href={project.href} className="font-mono text-massa-white underline underline-offset-4 decoration-1 hover:opacity-100 opacity-85 cursor-pointer">{t(content.ctaKey!)}</a>
+                  <span className="font-mono text-massa-black opacity-70">{t(content.tagsKey!)}</span>
+                  <a href={project.href} className="font-mono text-massa-black underline underline-offset-4 decoration-1 hover:opacity-100 opacity-85 cursor-pointer">{t(content.ctaKey!)}</a>
                 </div>
               </div>
             </motion.div>

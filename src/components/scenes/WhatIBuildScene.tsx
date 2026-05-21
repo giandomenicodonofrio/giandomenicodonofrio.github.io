@@ -10,7 +10,7 @@ const WhatIBuildScene = () => {
   const { ref, y } = useParallax(0.18);
 
   return (
-    <section ref={ref} className="relative w-full min-h-[42vh] bg-massa-red flex items-center justify-center overflow-hidden px-6">    
+    <section ref={ref} className="relative w-full min-h-[42vh] bg-massa-paper flex items-center justify-center overflow-hidden px-6">    
       <motion.div className="absolute inset-0 z-5 pointer-events-none" style={{ y }} initial={{ opacity: 0 }} whileInView={{ opacity: 0.02 }} viewport={vp} transition={{ duration: 0.45, ease: EASE_POWER2, delay: 0.1 }}>
         <div className="absolute top-[30%] left-[6%] w-[50%] h-[2px] bg-massa-black" />
         <div className="absolute top-[65%] left-[12%] w-[30%] h-[2px] bg-massa-black" />

@@ -10,53 +10,57 @@ body {
 
 @layer base {
   :root {
-    --background: 350 100% 45%;
-    --foreground: 0 0% 5%;
+    --background: 42 42% 96%;
+    --foreground: 0 0% 7%;
 
-    --card: 0 0% 5%;
-    --card-foreground: 0 0% 94%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 7%;
 
-    --popover: 0 0% 5%;
-    --popover-foreground: 0 0% 94%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 7%;
 
-    --primary: 0 0% 5%;
-    --primary-foreground: 0 0% 94%;
+    --primary: 0 0% 7%;
+    --primary-foreground: 42 42% 96%;
 
-    --secondary: 0 0% 13%;
-    --secondary-foreground: 0 0% 94%;
+    --secondary: 42 26% 90%;
+    --secondary-foreground: 0 0% 7%;
 
-    --muted: 0 0% 13%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 42 24% 90%;
+    --muted-foreground: 0 0% 34%;
 
-    --accent: 350 100% 45%;
-    --accent-foreground: 0 0% 5%;
+    --accent: 350 92% 44%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 94%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
-    --ring: 350 100% 45%;
+    --border: 0 0% 78%;
+    --input: 0 0% 78%;
+    --ring: 350 92% 44%;
 
     --radius: 0rem;
 
     /* Custom tokens */
-    --massa-red: 350 100% 45%;
-    --massa-black: 0 0% 5%;
-    --massa-grid: 0 0% 13%;
-    --massa-white: 0 0% 94%;
+    --massa-red: 350 92% 44%;
+    --massa-black: 0 0% 7%;
+    --massa-grid: 0 0% 14%;
+    --massa-white: 0 0% 100%;
+    --massa-paper: 42 42% 96%;
+    --massa-surface: 0 0% 100%;
+    --massa-line: 0 0% 80%;
+    --massa-muted: 0 0% 38%;
 
     --font-display: 'Archivo Black', sans-serif;
     --font-mono: 'IBM Plex Mono', monospace;
 
-    --sidebar-background: 0 0% 5%;
-    --sidebar-foreground: 0 0% 94%;
-    --sidebar-primary: 350 100% 45%;
-    --sidebar-primary-foreground: 0 0% 94%;
-    --sidebar-accent: 0 0% 13%;
-    --sidebar-accent-foreground: 0 0% 94%;
-    --sidebar-border: 0 0% 18%;
-    --sidebar-ring: 350 100% 45%;
+    --sidebar-background: 42 42% 96%;
+    --sidebar-foreground: 0 0% 7%;
+    --sidebar-primary: 350 92% 44%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 42 26% 90%;
+    --sidebar-accent-foreground: 0 0% 7%;
+    --sidebar-border: 0 0% 78%;
+    --sidebar-ring: 350 92% 44%;
   }
 }
 
@@ -116,6 +120,14 @@ body {
     background-color: hsl(var(--massa-black));
   }
 
+  .bg-massa-paper {
+    background-color: hsl(var(--massa-paper));
+  }
+
+  .bg-massa-surface {
+    background-color: hsl(var(--massa-surface));
+  }
+
   .text-massa-white {
     color: hsl(var(--massa-white));
   }
@@ -126,5 +138,13 @@ body {
 
   .text-massa-red {
     color: hsl(var(--massa-red));
+  }
+
+  .text-massa-muted {
+    color: hsl(var(--massa-muted));
+  }
+
+  .border-massa-line {
+    border-color: hsl(var(--massa-line));
   }
 }

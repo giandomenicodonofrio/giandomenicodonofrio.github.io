@@ -41,7 +41,7 @@ const WorkReelScene = () => {
     : null;
 
   return (
-    <section ref={ref} className="relative w-full min-h-screen bg-massa-red overflow-visible md:overflow-hidden flex items-start md:items-center justify-center py-14 md:py-20">
+    <section ref={ref} className="relative w-full min-h-screen bg-massa-paper overflow-visible md:overflow-hidden flex items-start md:items-center justify-center py-14 md:py-20">
       <motion.div className="absolute inset-0 grid-texture" style={{ y }} initial={{ opacity: 0 }} whileInView={{ opacity: 0.08 }} viewport={vp} transition={{ duration: 0.35, ease: EASE_POWER2 }} />
 
       <div className="relative z-20 flex w-[92vw] max-w-[1540px] flex-col gap-8">
@@ -62,14 +62,14 @@ const WorkReelScene = () => {
           </div>
         </motion.div>
 
-        <motion.div className="relative overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.35)]" style={{ borderRadius: "36px", background: "#070707" }} initial={{ opacity: 0, scaleY: 0.9, scaleX: 0.96 }} whileInView={{ opacity: 1, scaleY: 1, scaleX: 1 }} viewport={vp} transition={{ duration: 0.45, ease: EASE_POWER3, delay: 0.02 }}>
-          <div className="border-b border-[#1c1c1c] px-6 py-8 md:px-8 xl:px-10 xl:py-9">
+        <motion.div className="relative overflow-hidden border border-massa-black/10 bg-massa-surface shadow-[0_28px_70px_rgba(20,20,20,0.14)]" style={{ borderRadius: "36px" }} initial={{ opacity: 0, scaleY: 0.9, scaleX: 0.96 }} whileInView={{ opacity: 1, scaleY: 1, scaleX: 1 }} viewport={vp} transition={{ duration: 0.45, ease: EASE_POWER3, delay: 0.02 }}>
+          <div className="border-b border-massa-black/10 px-6 py-8 md:px-8 xl:px-10 xl:py-9">
             <div className="flex flex-col gap-6 xl:flex-row xl:items-end xl:justify-between">
               <div className="flex flex-col gap-4">
-                <span className="font-display text-massa-white text-[9vw] md:text-[3.8vw] xl:text-[3.2vw] leading-none uppercase drop-shadow-[0_4px_12px_rgba(0,0,0,0.4)]">
+                <span className="font-display text-massa-black text-[9vw] md:text-[3.8vw] xl:text-[3.2vw] leading-none uppercase">
                   {t("scene06.title")}
                 </span>
-                <div className="grid grid-cols-2 gap-x-6 gap-y-2 text-massa-white font-mono text-xs opacity-70 md:flex md:flex-wrap md:gap-6">
+                <div className="grid grid-cols-2 gap-x-6 gap-y-2 text-massa-black font-mono text-xs opacity-60 md:flex md:flex-wrap md:gap-6">
                   <span>{t("scene06.meta.left1")}</span>
                   <span>{t("scene06.meta.right1")}</span>
                   <span>{t("scene06.meta.left2")}</span>
@@ -79,7 +79,7 @@ const WorkReelScene = () => {
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-x-6 gap-y-3 font-mono text-sm text-massa-white/80 xl:max-w-[56rem] xl:justify-end">
+              <div className="flex flex-wrap gap-x-6 gap-y-3 font-mono text-sm text-massa-black/75 xl:max-w-[56rem] xl:justify-end">
                 {[t("scene06.cap1"), t("scene06.cap2"), t("scene06.cap3"), t("scene06.cap4"), t("scene06.cap5")].map((cap) => (
                   <span key={cap} className="inline-flex items-center gap-2">
                     <span className="h-[3px] w-6 bg-massa-red" />
@@ -103,8 +103,8 @@ const WorkReelScene = () => {
                     setActiveProjectId(project.id);
                     setMobileProjectId(project.id);
                   }}
-                  className={`group w-full bg-[#0f0f0f] text-massa-white border flex flex-col overflow-hidden text-left shadow-[0_12px_28px_rgba(0,0,0,0.45)] backdrop-blur-[2px] transition-transform duration-200 hover:-translate-y-2 hover:scale-[1.02] cursor-pointer ${
-                    isActive ? "border-massa-red shadow-[0_20px_48px_rgba(0,0,0,0.5)]" : "border-[#2a2a2a] hover:border-massa-red/70"
+                  className={`group w-full bg-massa-surface text-massa-black border flex flex-col overflow-hidden text-left shadow-[0_12px_28px_rgba(20,20,20,0.12)] backdrop-blur-[2px] transition-transform duration-200 hover:-translate-y-2 hover:scale-[1.02] cursor-pointer ${
+                    isActive ? "border-massa-red shadow-[0_20px_48px_rgba(20,20,20,0.16)]" : "border-massa-black/12 hover:border-massa-red/70"
                   }`}
                   initial={{ opacity: 0, y: 20, scale: 0.97 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -127,7 +127,7 @@ const WorkReelScene = () => {
 
           <motion.aside
             key={activeProject.id}
-            className="hidden xl:block h-full min-h-[620px] bg-[#101010] border border-[#262626] text-massa-white rounded-[28px] px-7 py-8 2xl:px-8 2xl:py-9 shadow-[0_18px_40px_rgba(0,0,0,0.35)]"
+            className="hidden xl:block h-full min-h-[620px] bg-massa-paper border border-massa-black/10 text-massa-black rounded-[28px] px-7 py-8 2xl:px-8 2xl:py-9 shadow-[0_18px_40px_rgba(20,20,20,0.1)]"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.35, ease: EASE_POWER2 }}
@@ -145,25 +145,25 @@ const WorkReelScene = () => {
 
               <div className="grid gap-4">
                 {activeContent.roleKey && (
-                  <div className="border-t border-white/10 pt-4">
+                  <div className="border-t border-massa-black/10 pt-4">
                     <div className="font-mono text-[11px] uppercase tracking-[0.16em] opacity-50">{t("scene06.detail.roleLabel")}</div>
                     <p className="mt-2 font-mono text-sm md:text-base leading-[1.6] opacity-85">{t(activeContent.roleKey)}</p>
                   </div>
                 )}
                 {activeContent.impactKey && (
-                  <div className="border-t border-white/10 pt-4">
+                  <div className="border-t border-massa-black/10 pt-4">
                     <div className="font-mono text-[11px] uppercase tracking-[0.16em] opacity-50">{t("scene06.detail.impactLabel")}</div>
                     <p className="mt-2 font-mono text-sm md:text-base leading-[1.6] opacity-85">{t(activeContent.impactKey)}</p>
                   </div>
                 )}
                 {activeContent.descKey && (
-                  <div className="border-t border-white/10 pt-4">
+                  <div className="border-t border-massa-black/10 pt-4">
                     <div className="font-mono text-[11px] uppercase tracking-[0.16em] opacity-50">{t("scene06.detail.descLabel")}</div>
                     <p className="mt-2 font-mono text-sm md:text-base leading-[1.7] opacity-80">{t(activeContent.descKey)}</p>
                   </div>
                 )}
                 {activeContent.tagsKey && (
-                  <div className="border-t border-white/10 pt-4">
+                  <div className="border-t border-massa-black/10 pt-4">
                     <div className="font-mono text-[11px] uppercase tracking-[0.16em] opacity-50">{t("scene06.detail.stackLabel")}</div>
                     <p className="mt-2 font-mono text-sm tracking-[0.08em] opacity-75">{t(activeContent.tagsKey)}</p>
                   </div>
@@ -180,17 +180,17 @@ const WorkReelScene = () => {
           <button
             type="button"
             aria-label={t("scene06.detail.close")}
-            className="absolute inset-0 bg-black/70 backdrop-blur-[3px]"
+            className="absolute inset-0 bg-massa-black/45 backdrop-blur-[3px]"
             onClick={() => setMobileProjectId(null)}
           />
           <motion.div
-            className="absolute inset-0 overflow-y-auto bg-[#101010] px-5 py-6 text-massa-white"
+            className="absolute inset-0 overflow-y-auto bg-massa-paper px-5 py-6 text-massa-black"
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.25, ease: EASE_POWER2 }}
           >
             <div className="mx-auto flex min-h-full w-full max-w-3xl flex-col">
-              <div className="flex items-start justify-between gap-4 border-b border-white/10 pb-4">
+              <div className="flex items-start justify-between gap-4 border-b border-massa-black/10 pb-4">
                 <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-massa-red">{t("scene06.detail.label")}</div>
                 <button
                   type="button"
@@ -210,25 +210,25 @@ const WorkReelScene = () => {
                 )}
 
                 {mobileContent.roleKey && (
-                  <div className="border-t border-white/10 pt-4">
+                  <div className="border-t border-massa-black/10 pt-4">
                     <div className="font-mono text-[11px] uppercase tracking-[0.16em] opacity-50">{t("scene06.detail.roleLabel")}</div>
                     <p className="mt-2 font-mono text-sm leading-[1.6] opacity-85">{t(mobileContent.roleKey)}</p>
                   </div>
                 )}
                 {mobileContent.impactKey && (
-                  <div className="border-t border-white/10 pt-4">
+                  <div className="border-t border-massa-black/10 pt-4">
                     <div className="font-mono text-[11px] uppercase tracking-[0.16em] opacity-50">{t("scene06.detail.impactLabel")}</div>
                     <p className="mt-2 font-mono text-sm leading-[1.6] opacity-85">{t(mobileContent.impactKey)}</p>
                   </div>
                 )}
                 {mobileContent.descKey && (
-                  <div className="border-t border-white/10 pt-4">
+                  <div className="border-t border-massa-black/10 pt-4">
                     <div className="font-mono text-[11px] uppercase tracking-[0.16em] opacity-50">{t("scene06.detail.descLabel")}</div>
                     <p className="mt-2 font-mono text-sm leading-[1.7] opacity-80">{t(mobileContent.descKey)}</p>
                   </div>
                 )}
                 {mobileContent.tagsKey && (
-                  <div className="border-t border-white/10 pt-4">
+                  <div className="border-t border-massa-black/10 pt-4">
                     <div className="font-mono text-[11px] uppercase tracking-[0.16em] opacity-50">{t("scene06.detail.stackLabel")}</div>
                     <p className="mt-2 font-mono text-sm tracking-[0.08em] opacity-75">{t(mobileContent.tagsKey)}</p>
                   </div>

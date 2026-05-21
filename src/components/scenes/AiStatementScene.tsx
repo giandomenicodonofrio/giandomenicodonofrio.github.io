@@ -11,8 +11,8 @@ const AiStatementScene = () => {
   const capabilities = t("scene12.keywords").split("·").map((s) => s.trim()).filter(Boolean);
 
   return (
-    <section ref={ref} className="relative w-full min-h-screen bg-massa-red overflow-hidden flex items-center justify-center pt-28 md:pt-36">
-      <motion.div className="absolute inset-0 bg-massa-red" style={{ y }} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={vp} transition={{ duration: 0.35, ease: EASE_POWER2 }} />
+    <section ref={ref} className="relative w-full min-h-screen bg-massa-paper overflow-hidden flex items-center justify-center pt-28 md:pt-36">
+      <motion.div className="absolute inset-0 bg-massa-paper" style={{ y }} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={vp} transition={{ duration: 0.35, ease: EASE_POWER2 }} />
 
       <div className="clip-reveal z-10 flex flex-col items-center">
         <motion.span className="font-display text-massa-black text-[30vw] md:text-[22vw] leading-none select-none" initial={{ opacity: 0, scale: 0.95, y: 60 }} whileInView={{ opacity: 1, scale: 1, y: 0 }} viewport={vp} transition={{ duration: 0.8, ease: EASE_POWER3, delay: 0.18 }}>

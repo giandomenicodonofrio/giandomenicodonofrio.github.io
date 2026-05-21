@@ -11,7 +11,7 @@ const HeroScene = () => {
   const { ref, y } = useParallax(0.12);
 
   return (
-    <section ref={ref} className="relative w-full min-h-screen bg-massa-red flex items-center justify-center overflow-hidden px-6 py-20 md:py-24">
+    <section ref={ref} className="relative w-full min-h-screen bg-massa-paper flex items-center justify-center overflow-hidden px-6 py-20 md:py-24">
       <motion.div className="absolute inset-0 grid-texture" style={{ y }} initial={{ opacity: 0 }} whileInView={{ opacity: 0.05 }} viewport={vp} transition={{ duration: 0.6, ease: EASE_POWER2 }} />
 
       <motion.div className="absolute inset-0 z-5 pointer-events-none" style={{ y }} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 0.06, y: 0 }} viewport={vp} transition={{ duration: 0.55, ease: EASE_POWER2, delay: 0.25 }}>
