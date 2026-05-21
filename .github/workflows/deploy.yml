@@ -1,0 +1,59 @@
+name: Build and Deploy React App
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Debug build output
+        run: |
+          echo "== ROOT =="
+          ls -la
+          echo "== BUILD =="
+          ls -la build || true
+          echo "== DIST =="
+          ls -la dist || true
+          echo "== OUT =="
+          ls -la out || true
+
+      - name: Validate build (must contain index.html)
+        run: |
+          if [ -f dist/index.html ]; then
+            echo "Using dist/"
+          elif [ -f build/index.html ]; then
+            echo "Using build/"
+          else
+            echo "❌ No index.html found"
+            exit 1
+          fi
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.DEPLOY_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ${{ steps.validate.outputs.dir || 'dist' }}
+          force_orphan: true

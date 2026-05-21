@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  overflow-x: hidden;
+}
+
+@layer base {
+  :root {
+    --background: 350 100% 45%;
+    --foreground: 0 0% 5%;
+
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 94%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 94%;
+
+    --primary: 0 0% 5%;
+    --primary-foreground: 0 0% 94%;
+
+    --secondary: 0 0% 13%;
+    --secondary-foreground: 0 0% 94%;
+
+    --muted: 0 0% 13%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 350 100% 45%;
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 94%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 350 100% 45%;
+
+    --radius: 0rem;
+
+    /* Custom tokens */
+    --massa-red: 350 100% 45%;
+    --massa-black: 0 0% 5%;
+    --massa-grid: 0 0% 13%;
+    --massa-white: 0 0% 94%;
+
+    --font-display: 'Archivo Black', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 0 0% 94%;
+    --sidebar-primary: 350 100% 45%;
+    --sidebar-primary-foreground: 0 0% 94%;
+    --sidebar-accent: 0 0% 13%;
+    --sidebar-accent-foreground: 0 0% 94%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 350 100% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-mono);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .scene-bg {
+    @apply absolute inset-0;
+  }
+
+  .scene-main {
+    @apply relative z-10;
+  }
+
+  .scene-details {
+    @apply relative z-20;
+  }
+
+  .clip-reveal {
+    overflow: hidden;
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  .grid-texture {
+    background-image:
+      linear-gradient(hsl(var(--massa-grid)) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--massa-grid)) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .bg-massa-red {
+    background-color: hsl(var(--massa-red));
+  }
+
+  .bg-massa-black {
+    background-color: hsl(var(--massa-black));
+  }
+
+  .text-massa-white {
+    color: hsl(var(--massa-white));
+  }
+
+  .text-massa-black {
+    color: hsl(var(--massa-black));
+  }
+
+  .text-massa-red {
+    color: hsl(var(--massa-red));
+  }
+}
