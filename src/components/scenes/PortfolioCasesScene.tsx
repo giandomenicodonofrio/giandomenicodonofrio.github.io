@@ -20,6 +20,7 @@ const PortfolioCasesScene = () => {
         {cards.map((project, index) => {
           const content = project.portfolio!;
           const isPrimary = index === 0;
+          const isExternalLink = project.href.startsWith("http");
 
           return (
             <motion.div
@@ -53,7 +54,14 @@ const PortfolioCasesScene = () => {
                 </div>
                 <div className={`flex items-center justify-between ${isPrimary ? "pt-2" : "pt-1"} text-sm`}>
                   <span className="font-mono text-massa-black opacity-70">{t(content.tagsKey!)}</span>
-                  <a href={project.href} className="font-mono text-massa-black underline underline-offset-4 decoration-1 hover:opacity-100 opacity-85 cursor-pointer">{t(content.ctaKey!)}</a>
+                  <a
+                    href={project.href}
+                    target={isExternalLink ? "_blank" : undefined}
+                    rel={isExternalLink ? "noreferrer" : undefined}
+                    className="font-mono text-massa-black underline underline-offset-4 decoration-1 hover:opacity-100 opacity-85 cursor-pointer"
+                  >
+                    {t(content.ctaKey!)}
+                  </a>
                 </div>
               </div>
             </motion.div>

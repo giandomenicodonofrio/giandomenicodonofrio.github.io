@@ -2,6 +2,10 @@ import projectImg01 from "@/assets/project-01.jpg";
 import projectImg02 from "@/assets/project-02.jpg";
 import projectImg03 from "@/assets/project-03.jpg";
 import projectImg04 from "@/assets/project-04.jpg";
+import projectAsclepiusImg from "@/assets/project-asclepius.jpg";
+import projectNerImg from "@/assets/project-ner.jpg";
+import projectPhotoboothImg from "@/assets/project-photobooth.jpg";
+import projectRilImg from "@/assets/project-ril.jpg";
 
 export type ProjectId =
   | "asclepius-ecg-ai"
@@ -9,7 +13,9 @@ export type ProjectId =
   | "gen-ai-ops"
   | "automation-stack"
   | "composable-apis"
-  | "photobooth";
+  | "photobooth"
+  | "ril"
+  | "ner";
 
 type ProjectText = {
   titleKeys: string[];
@@ -40,7 +46,7 @@ export type ProjectDefinition = {
 export const projectCatalog: Record<ProjectId, ProjectDefinition> = {  
   "asclepius-ecg-ai": {
     id: "asclepius-ecg-ai",
-    image: projectImg01,
+    image: projectAsclepiusImg,
     href: "#gen-ai-ops",
     titleKeys: ["scene05.card1.title1", "scene05.card1.title2"],
     portfolio: {
@@ -114,7 +120,7 @@ export const projectCatalog: Record<ProjectId, ProjectDefinition> = {
   },
   photobooth: {
     id: "photobooth",
-    image: projectImg04,
+    image: projectPhotoboothImg,
     href: "#portfolio-cases",
     titleKeys: ["projects.photobooth.title1", "projects.photobooth.title2"],
     portfolio: {
@@ -131,13 +137,53 @@ export const projectCatalog: Record<ProjectId, ProjectDefinition> = {
       href: "#portfolio-cases",
     },
   },
+  ril: {
+    id: "ril",
+    image: projectRilImg,
+    href: "https://github.com/giandomenicodonofrio/RIL",
+    titleKeys: ["projects.ril.title1", "projects.ril.title2"],
+    portfolio: {
+      titleKeys: ["projects.ril.title1", "projects.ril.title2"],
+      whatKey: "projects.ril.what",
+      roleKey: "projects.ril.role",
+      impactKey: "projects.ril.impact",
+      descKey: "projects.ril.desc",
+      tagsKey: "projects.ril.tags",
+      ctaKey: "projects.ril.cta",
+    },
+    reel: {
+      roleKey: "projects.ril.reelRole",
+      href: "https://github.com/giandomenicodonofrio/RIL",
+    },
+  },
+  ner: {
+    id: "ner",
+    image: projectNerImg,
+    href: "https://github.com/giandomenicodonofrio/NER",
+    titleKeys: ["projects.ner.title1", "projects.ner.title2"],
+    portfolio: {
+      titleKeys: ["projects.ner.title1", "projects.ner.title2"],
+      whatKey: "projects.ner.what",
+      roleKey: "projects.ner.role",
+      impactKey: "projects.ner.impact",
+      descKey: "projects.ner.desc",
+      tagsKey: "projects.ner.tags",
+      ctaKey: "projects.ner.cta",
+    },
+    reel: {
+      roleKey: "projects.ner.reelRole",
+      href: "https://github.com/giandomenicodonofrio/NER",
+    },
+  },
 };
 
-export const portfolioCaseIds: ProjectId[] = ["asclepius-ecg-ai", "ecg-dashboard", "photobooth"];
+export const portfolioCaseIds: ProjectId[] = ["asclepius-ecg-ai", "ecg-dashboard", "photobooth", "ril", "ner"];
 
 export const workReelIds: ProjectId[] = [
   "asclepius-ecg-ai",
   "photobooth",
+  "ril",
+  "ner",
 ];
 
 export const featuredProjectId: ProjectId = "gen-ai-ops";
